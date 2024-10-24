@@ -1,0 +1,32 @@
+Summary of Your Java Web Application
+Bug Fix for Non-Existent ID Deletion
+
+Functionality: Enhances user experience by handling attempts to delete non-existent book entries gracefully. Instead of showing a blank page, the application informs the user that the book does not exist.
+Technical Details: Uses Spring MVC's @PostMapping to map HTTP POST requests. It retrieves the book ID with @PathVariable and checks existence with Optional<Book>.
+Error Handling: If no book is found for the given ID, the application adds an error message to the model and continues to display the book shelf page.
+Prevention of Empty Record Saves
+
+Functionality: Prevents the saving of empty book records to the database, ensuring data integrity and user feedback on input errors.
+Technical Details: The method checks if all the fields (author, title, size) are empty before proceeding with saving. It uses the @ModelAttribute to bind form data to the Book object.
+User Feedback: If the check fails, it returns the user to the form with an error message, prompting for at least one field to be filled.
+Deletion of Records by Regex
+
+Functionality: Allows users to delete multiple book records based on regex patterns matching any of the book fields (author, title, size), making batch deletions efficient and user-friendly.
+Technical Details: Implements a form in HTML to capture the regex input and a Spring MVC controller method to process this input. It uses Java Streams to filter out books that match the regex across specified fields and deletes them in bulk.
+Efficiency and Flexibility: The use of regex provides powerful matching capabilities that can handle complex deletion criteria specified by the user.
+Code Design Choices
+Use of Spring MVC Framework: Facilitates the creation of a structured, maintainable web application with clear separation of concerns (model-view-controller).
+Error Handling: Consistent approach across different functionalities to ensure the application remains robust and user-friendly under various error conditions.
+User Interface: Simple and functional, allowing easy navigation and operation without unnecessary complexity.
+Data Handling: Efficient use of repository patterns for data access and manipulation, leveraging Spring Data’s functionalities.
+Preparation Tips
+Understand Your Code: Be able to explain why you chose specific methods or classes, especially regarding Spring annotations like @PostMapping, @ModelAttribute, and @PathVariable.
+Review Error Handling: Know how your code handles different errors or incorrect user inputs.
+Test Scenarios: Think about how you would test these functionalities to ensure they work as expected.
+This overview should help you discuss your project confidently. Good luck with your retake! If you need more detailed explanations on specific parts, feel free to ask.
+
+
+
+
+
+
