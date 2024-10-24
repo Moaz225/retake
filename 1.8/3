@@ -1,0 +1,8 @@
+<form method="post" th:action="@{/books/removeByRegex}">
+    <table>
+        <tr>
+            <td><input type="text" name="queryRegex" placeholder="Regex for author/title/size"></td>
+            <td><input type="submit" value="Remove by regex"></td>
+        </tr>
+    </table>
+</form>
